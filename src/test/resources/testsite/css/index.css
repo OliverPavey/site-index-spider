@@ -1,0 +1,32 @@
+.flex-container {
+    display: flex;
+}
+
+.index-card {
+    padding: 5px;
+    margin: 5px;
+    border-style: solid;
+    border-width: 1px;
+    vertical-align: middle;
+}
+
+.index-card img {
+    width: 100%;
+}
+
+.index-card p {
+    text-align: center;
+    font-weight: 500;
+}
+
+.slogan {
+    margin-top: 10px;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 500;
+}
+
+.footer-text {
+    text-align: center;
+    font-weight: 500;
+}

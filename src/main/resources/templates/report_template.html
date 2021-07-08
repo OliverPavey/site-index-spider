@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+
+    <h1>Site-Map for <tt th:text="${siteScan.homepage?.uri}"></tt></h1>
+    <p>Domain: <tt th:text="${siteScan.domain}"></tt></p>
+
+    <th:block th:each="pageScan : ${siteScan.uriToPageScan.values()}">
+        <hr/>
+
+        <h2>Page : <tt th:text="${pageScan?.uri}"></tt></h2>
+
+        <h3>Links To:</h3>
+        <ul>
+            <li th:if="${pageScan.links.size() == 0}">No links</li>
+            <th:block th:each="link : ${pageScan.links}">
+                <li th:text="${link?.uri}"></li>
+            </th:block>
+        </ul>
+
+        <h4>External Links:</h4>
+        <ul>
+            <li th:if="${pageScan.externalLinks.size() == 0}">No external links</li>
+            <th:block th:each="externalLink : ${pageScan.externalLinks}">
+                <li th:text="${externalLink}"></li>
+            </th:block>
+        </ul>
+
+        <h4>Uses Resources:</h4>
+        <ul>
+            <li th:if="${pageScan.resources.size() == 0}">No resources</li>
+            <th:block th:each="resource : ${pageScan.resources}">
+                <li th:text="${resource?.uri}"></li>
+            </th:block>
+        </ul>
+
+    </th:block>
+    <hr/>
+
+</body>
+</html>
